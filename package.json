@@ -1,0 +1,31 @@
+{
+  "name": "sjsgi",
+  "version": "0.0.0",
+  "description": "SailsJS Gateway Interface for executing a Sails application through CGI.",
+  "keywords": [
+    "CGI",
+    "sailsjs",
+    "gateway-interface"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "sails": ">=1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "3.5.0"
+  },
+  "scripts": {
+    "start": "echo 'Application must be accessed through a Common Gateway Interface (CGI)'",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "node ./node_modules/eslint/bin/eslint . --max-warnings=0 && echo '✔  Your code looks good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
+    "debug": "node debug app.js"
+  },
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonschmedes/sjsgi.git"
+  },
+  "author": "Jason Schmedes",
+  "license": "MIT"
+}
