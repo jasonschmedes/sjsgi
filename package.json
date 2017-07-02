@@ -1,6 +1,6 @@
 {
   "name": "sjsgi",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "SailsJS Gateway Interface for executing a Sails application through CGI.",
   "keywords": [
     "CGI",
