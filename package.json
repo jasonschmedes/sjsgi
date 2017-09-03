@@ -1,6 +1,6 @@
 {
   "name": "sjsgi",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "SailsJS Gateway Interface for executing a Sails application through CGI.",
   "keywords": [
     "CGI",
@@ -12,14 +12,20 @@
     "sails": ">=1.0.0"
   },
   "devDependencies": {
-    "eslint": "3.5.0"
+    "eslint": "*",
+    "istanbul": "*",
+    "mocha": "*",
+    "mock-stdin": "*",
+    "should": "*",
+    "sinon": "*"
   },
   "scripts": {
+    "debug": "node debug ./lib/index.js",
     "start": "echo 'Application must be accessed through a Common Gateway Interface (CGI)'",
-    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "lint": "node ./node_modules/eslint/bin/eslint . --max-warnings=0 && echo '✔  Your code looks good.'",
-    "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
-    "debug": "node debug app.js"
+    "pretest": "rm -rf coverage && npm run-script lint",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive --check-leaks --globals sails,FILE_PARSER_LOGGER_ENABLED -R spec -r should",
+    "posttest": "./node_modules/.bin/istanbul check-coverage"
   },
   "main": "./lib/index.js",
   "repository": {

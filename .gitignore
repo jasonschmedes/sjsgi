@@ -45,7 +45,7 @@ nbproject
 .tmp
 dump.rdb
 testApp
+coverage
 -coverage
 -isolate-0x*
 ssl
-
